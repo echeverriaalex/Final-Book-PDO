@@ -1,6 +1,6 @@
 <?php 
     namespace DAO;
-    use Models\UserBook;
+    use Models\User;
     use PDOException;
 
     class UserPDO{
@@ -16,7 +16,7 @@
                 $userResult = $this->connection->Execute($query);                
 
                 foreach($userResult as $row){
-                    $user = new UserBook($row['userId'], $row['email'], $row['password']);
+                    $user = new User($row['userId'], $row['email'], $row['password']);
                     
                     /*
                     $user->setEmail();
@@ -42,7 +42,7 @@
 
                 if($resultArray != null){
                     foreach($resultArray as $result){
-                        $user = new UserBook($result['userId'], $result['email'], $result['password']);
+                        $user = new User($result['userId'], $result['email'], $result['password']);
                     }                  
                     return $user;
                 }

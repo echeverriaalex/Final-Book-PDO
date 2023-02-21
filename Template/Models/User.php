@@ -1,7 +1,7 @@
 <?php
     namespace Models;
 
-    class UserBook{
+    class User{
         private $userId;
         private $email;
         private $password;
